@@ -1,4 +1,4 @@
-# QA checklist — landing page (assignment)
+# QA checklist — IronPDF for C++ landing page (assignment)
 
 Use this list when validating the submission before hand-off. Check both **local** (`php spark serve`) and, if applicable, a **staging** URL with HTTPS.
 
@@ -36,7 +36,7 @@ Manually resize or use device emulation at least at:
 
 - [ ] `<title>` and meta description match intent and come from JSON-driven content.
 - [ ] Canonical URL uses `base_url()` and matches deployment.
-- [ ] Open Graph / Twitter meta present; `og:image` resolves (200) for `public/assets/img/og-default.svg`.
+- [ ] Open Graph / Twitter meta present; `og:image` resolves (200) for `public/assets/svg/og-default.svg`.
 - [ ] Meaningful `alt` on hero image; decorative icons use `aria-hidden` / appropriate patterns.
 
 ## 6. Accessibility
@@ -75,5 +75,5 @@ Also verify:
 **Sign-off**
 
 | Reviewer | Date | Notes |
-|----------|------|-------|
+| -------- | ---- | ----- |
 |          |      |       |

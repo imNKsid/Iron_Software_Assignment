@@ -1,68 +1,78 @@
 /**
- * Base tokens and global resets layered on Bootstrap.
+ * Iron Software — Figma tokens (#2C0F29 base). Gotham is commercial; Montserrat is the web fallback.
  */
 :root {
-    --nl-font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --nl-color-ink: #0f172a;
-    --nl-color-muted: #475569;
-    --nl-color-surface: #f8fafc;
-    --nl-color-brand: #1e3a5f;
-    --nl-color-brand-accent: #2563eb;
-    --nl-radius-lg: 1rem;
-    --nl-focus-ring: 0 0 0 3px rgba(37, 99, 235, 0.45);
+    /* Full-bleed layout with a modest horizontal gutter (matches nav + sections) */
+    --iron-gutter-x: clamp(0.75rem, 2.5vw, 1.5rem);
+    --iron-font: "Gotham", "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --iron-bg: #2c0f29;
+    --iron-bg-deep: #1f0a1d;
+    --iron-band-gradient: linear-gradient(to right, #8e608e 0%, #402640 50%, #371a34 100%);
+    --iron-pink: #e91e63;
+    --iron-pink-hover: #c2185b;
+    --iron-text: #ffffff;
+    --iron-heading-lavender: #c6aac6;
+    --iron-coming: #8f618f;
+    --iron-pill-bg: #c6aac6;
+    --iron-footnote-light: rgba(255, 255, 255, 0.85);
+    --iron-green-badge: #43a047;
+    --iron-platform-bg: #2c2c2c;
+    --iron-why-bg: #402640;
+    --iron-footer-pink: #e01a59;
+    --iron-focus: 0 0 0 3px rgba(198, 170, 198, 0.65);
 }
 
-.nl-body {
-    font-family: var(--nl-font-sans);
-    color: var(--nl-color-ink);
+.iron-body {
+    font-family: var(--iron-font);
+    color: var(--iron-text);
+    background-color: var(--iron-bg);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 }
 
-.nl-container {
-    max-width: 72rem;
+.iron-container {
+    max-width: 75%;
 }
 
-.nl-section-y {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
+.iron-main {
+    flex: 1 0 auto;
+}
+
+.iron-section {
+    position: relative;
+}
+
+.py-lg-6 {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
 }
 
 @media (min-width: 992px) {
-    .nl-section-y {
-        padding-top: 4.5rem !important;
-        padding-bottom: 4.5rem !important;
+    .py-lg-6 {
+        padding-top: 5rem !important;
+        padding-bottom: 5rem !important;
     }
 }
 
-.nl-heading,
-.nl-section-title {
-    letter-spacing: -0.02em;
-}
-
-.nl-lead,
-.nl-section-lead {
-    max-width: 42rem;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.nl-eyebrow {
-    letter-spacing: 0.08em;
-}
-
-.nl-letter-spacing {
-    letter-spacing: 0.06em;
-    font-size: 0.75rem;
-}
-
-.nl-skip-link {
-    z-index: 1030;
-}
-
-/* Skip link focus for keyboard users */
-.skip-link:focus {
+.iron-skip-link {
     z-index: 1080;
-    background: #fff;
-    outline: 3px solid var(--nl-color-brand-accent);
+    background: var(--iron-bg);
+    color: var(--iron-text) !important;
+    text-decoration: none;
+    border-radius: 0 0 0.35rem 0;
+}
+
+.iron-skip-link:focus {
+    outline: 3px solid var(--iron-pill-bg);
+    outline-offset: 2px;
+}
+
+.iron-hash {
+    color: var(--iron-pink);
+    font-weight: 600;
+    margin-right: 0.15em;
+}
+
+.text-white-50 {
+    color: rgba(255, 255, 255, 0.65) !important;
 }
