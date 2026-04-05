@@ -1,0 +1,68 @@
+/**
+ * Base tokens and global resets layered on Bootstrap.
+ */
+:root {
+    --nl-font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --nl-color-ink: #0f172a;
+    --nl-color-muted: #475569;
+    --nl-color-surface: #f8fafc;
+    --nl-color-brand: #1e3a5f;
+    --nl-color-brand-accent: #2563eb;
+    --nl-radius-lg: 1rem;
+    --nl-focus-ring: 0 0 0 3px rgba(37, 99, 235, 0.45);
+}
+
+.nl-body {
+    font-family: var(--nl-font-sans);
+    color: var(--nl-color-ink);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+.nl-container {
+    max-width: 72rem;
+}
+
+.nl-section-y {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+@media (min-width: 992px) {
+    .nl-section-y {
+        padding-top: 4.5rem !important;
+        padding-bottom: 4.5rem !important;
+    }
+}
+
+.nl-heading,
+.nl-section-title {
+    letter-spacing: -0.02em;
+}
+
+.nl-lead,
+.nl-section-lead {
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nl-eyebrow {
+    letter-spacing: 0.08em;
+}
+
+.nl-letter-spacing {
+    letter-spacing: 0.06em;
+    font-size: 0.75rem;
+}
+
+.nl-skip-link {
+    z-index: 1030;
+}
+
+/* Skip link focus for keyboard users */
+.skip-link:focus {
+    z-index: 1080;
+    background: #fff;
+    outline: 3px solid var(--nl-color-brand-accent);
+}

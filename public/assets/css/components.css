@@ -1,0 +1,87 @@
+/**
+ * Component-level layout (hero, cards, tiles, CTA panel).
+ */
+.nl-navbar {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.nl-brand {
+    color: var(--nl-color-brand) !important;
+    letter-spacing: -0.02em;
+}
+
+.nl-nav-link {
+    font-weight: 500;
+}
+
+.nl-nav-link:focus-visible {
+    border-radius: 0.25rem;
+    box-shadow: var(--nl-focus-ring);
+}
+
+.nl-btn-primary {
+    font-weight: 600;
+}
+
+.nl-hero-figure {
+    position: relative;
+}
+
+.nl-hero-img {
+    background: linear-gradient(145deg, #eff6ff 0%, #f8fafc 100%);
+}
+
+.nl-logo-tile {
+    min-height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nl-logo-abbr {
+    font-size: 1.125rem;
+    letter-spacing: 0.04em;
+    color: var(--nl-color-brand);
+}
+
+.nl-card {
+    border-radius: var(--nl-radius-lg);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nl-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.75rem 2rem rgba(15, 23, 42, 0.08) !important;
+}
+
+.nl-card:focus-within {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
+}
+
+.nl-feature-icon {
+    display: block;
+}
+
+.nl-cta-panel {
+    background: linear-gradient(120deg, #f1f5f9 0%, #ffffff 55%, #eff6ff 100%);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.nl-cta-copy {
+    max-width: 40rem;
+}
+
+.nl-footer-link {
+    text-decoration: none;
+}
+
+.nl-footer-link:hover {
+    text-decoration: underline;
+}
+
+.nl-footer-link:focus-visible {
+    border-radius: 0.2rem;
+    box-shadow: var(--nl-focus-ring);
+}

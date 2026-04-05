@@ -1,0 +1,121 @@
+{
+  "meta": {
+    "title": "NovaLayer — Ship interfaces faster",
+    "description": "Design-to-code workflow tools for product teams. Pixel-ready layouts, accessible components, and performance-minded defaults.",
+    "canonicalPath": "/",
+    "ogImage": "/assets/img/og-default.svg",
+    "themeColor": "#1e3a5f"
+  },
+  "site": {
+    "name": "NovaLayer",
+    "logoLabel": "NovaLayer"
+  },
+  "navigation": {
+    "id": "primary-navigation",
+    "label": "Primary",
+    "items": [
+      { "id": "nav-product", "label": "Product", "href": "#product", "isActive": true },
+      { "id": "nav-solutions", "label": "Solutions", "href": "#solutions" },
+      { "id": "nav-pricing", "label": "Pricing", "href": "#pricing" },
+      { "id": "nav-resources", "label": "Resources", "href": "#resources" }
+    ],
+    "cta": {
+      "id": "nav-cta",
+      "label": "Get started",
+      "href": "#cta"
+    }
+  },
+  "hero": {
+    "id": "product",
+    "eyebrow": "Frontend & QA challenge",
+    "heading": "Turn design intent into production-ready pages",
+    "subheading": "Semantic structure, responsive layouts, and accessible interactions—without sacrificing speed or polish.",
+    "primaryCta": { "label": "Start building", "href": "#cta" },
+    "secondaryCta": { "label": "View features", "href": "#features" },
+    "image": {
+      "src": "/assets/img/hero-panel.svg",
+      "alt": "Abstract UI composition suggesting layout blocks and a grid",
+      "width": 560,
+      "height": 420
+    }
+  },
+  "trustedBy": {
+    "id": "solutions",
+    "heading": "Trusted by teams who care about craft",
+    "logos": [
+      { "name": "Northwind", "abbr": "NW" },
+      { "name": "Contoso", "abbr": "CO" },
+      { "name": "Fabrikam", "abbr": "FB" },
+      { "name": "Adventure", "abbr": "AD" }
+    ]
+  },
+  "features": {
+    "id": "features",
+    "heading": "Everything you need to ship with confidence",
+    "subheading": "Composable sections, JSON-driven content, and a layout tuned for clarity across breakpoints.",
+    "items": [
+      {
+        "id": "feat-semantic",
+        "title": "Semantic HTML",
+        "body": "Landmarks, headings, and labels that make sense to users and assistive tech.",
+        "icon": "semantic"
+      },
+      {
+        "id": "feat-responsive",
+        "title": "Responsive by default",
+        "body": "Mobile layouts are authored without a dedicated Figma frame—fluid grids and sensible stacking.",
+        "icon": "responsive"
+      },
+      {
+        "id": "feat-performance",
+        "title": "Performance-aware",
+        "body": "Preconnect hints, deferred scripts, and image dimensions to keep CLS and LCP in check.",
+        "icon": "performance"
+      }
+    ]
+  },
+  "stats": {
+    "id": "pricing",
+    "heading": "Outcomes that compound",
+    "items": [
+      { "value": "42%", "label": "Faster review cycles" },
+      { "value": "3x", "label": "Fewer layout regressions" },
+      { "value": "99.9%", "label": "Uptime on static assets" }
+    ]
+  },
+  "cta": {
+    "id": "cta",
+    "heading": "Ready to align pixels with production?",
+    "body": "Drop this template into CodeIgniter, wire your JSON, and iterate with your design file side-by-side.",
+    "button": { "label": "Book a walkthrough", "href": "#product" }
+  },
+  "footer": {
+    "id": "resources",
+    "tagline": "Built with CodeIgniter 4, Bootstrap 5, and structured content.",
+    "columns": [
+      {
+        "title": "Product",
+        "links": [
+          { "label": "Overview", "href": "#product" },
+          { "label": "Features", "href": "#features" },
+          { "label": "Pricing", "href": "#pricing" }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          { "label": "Careers", "href": "#resources" },
+          { "label": "Contact", "href": "#cta" }
+        ]
+      },
+      {
+        "title": "Legal",
+        "links": [
+          { "label": "Privacy", "href": "#" },
+          { "label": "Terms", "href": "#" }
+        ]
+      }
+    ],
+    "finePrint": "© 2026 NovaLayer. Assignment demo — replace with real content."
+  }
+}
