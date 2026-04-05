@@ -1,17 +1,28 @@
 # Iron Software — Front-end test task (CodeIgniter 4)
 
-This repository implements the take-home brief: a **Bootstrap 5** landing page driven by **JSON** content, served through **CodeIgniter 4** with clear separation between controller, views, and assets. The original design reference is in Figma:
+This repository implements the take-home brief: a **Bootstrap 5** landing page for **IronPDF for C++** (Iron Software beta program), driven by **JSON** content and served through **CodeIgniter 4**. The layout, dark theme, pink CTAs, and section order follow the **Test Design** Figma file:
 
-[https://www.figma.com/file/rnqGoCJqAd7lPrPgYwkEmT/Test-Design?node-id=0%3A1](https://www.figma.com/file/rnqGoCJqAd7lPrPgYwkEmT/Test-Design?node-id=0%3A1)
+[https://www.figma.com/design/rnqGoCJqAd7lPrPgYwkEmT/Test-Design](https://www.figma.com/design/rnqGoCJqAd7lPrPgYwkEmT/Test-Design)
 
-Because the Figma file is not embedded here, **colors, spacing, and typography should be reconciled against that file** (Inspect panel). Design tokens live mainly in `public/assets/css/base.css` (`:root` variables) and Bootstrap overrides in `public/assets/css/theme.css`.
+Design tokens live in `public/assets/css/base.css` (`:root`) and section styling in `public/assets/css/components.css`. The page background matches Figma at **`#2C0F29`**.
+
+**Raster / SVG assets** (place under `public/assets/img/`):
+
+- `logo.png` — header Iron Software logo  
+- `iron_pdf_logo.png` — hero product logo (“IronPDF for C++”)  
+- `cpp_side_logo.png` — right-hand hero artwork (tall column aligned with hero)  
+- `coming_soon.png` — sticker badge next to “IronPDF for C++” features title  
+- `html_to_pdf.png` — “Why make a C++ PDF Library” diagram  
+- `iron_pdf_java.svg`, `iron_pdf_python.svg`, `iron_pdf_node.svg` — early-access cards (placeholders included; replace with final art if needed)  
+
+CSS uses **`font-family: "Gotham", "Montserrat", …`**. Gotham is not bundled; **Montserrat** loads from Google Fonts as a close fallback. Install Gotham locally or provide `@font-face` if you need an exact match.
 
 ## Tech stack
 
 - **PHP 8.1+** / **CodeIgniter 4.7** (from the official app starter)
 - **HTML5** semantic landmarks (`header`, `main`, `section`, `footer`, heading order)
 - **Bootstrap 5.3.3** (CDN) plus modular custom CSS (`base`, `components`, `theme`)
-- **Inter** (Google Fonts, `display=swap`) with `preconnect`
+- **Montserrat** (Google Fonts, weights 300 / 500 / 700 / 900, `display=swap`) with `preconnect`
 - **Vanilla JS** (`public/assets/js/app.js`) for accessible in-page anchor scrolling (respects `prefers-reduced-motion`)
 - **JSON** content: `app/Data/content.json` (not web-exposed), loaded by `App\Libraries\ContentLoader`
 
@@ -61,14 +72,6 @@ Routing is declared in `app/Config/Routes.php`:
    Open the URL it prints (default `http://localhost:8080`). The document root for production deployments should be the **`public/`** directory.
 
 5. **Quality checks**: run Lighthouse in Chrome DevTools against the home page; see `docs/QA_CHECKLIST.md` for a manual pass aligned with the assignment.
-
-## Figma alignment
-
-After exporting assets from Figma (or matching hex values and spacing):
-
-1. Update `:root` variables in `public/assets/css/base.css` and `theme.css`.
-2. Replace or adjust images under `public/assets/img/` if the design specifies raster artwork.
-3. Adjust copy and section order in `app/Data/content.json` as needed.
 
 ## License
 

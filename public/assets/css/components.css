@@ -1,87 +1,672 @@
 /**
- * Component-level layout (hero, cards, tiles, CTA panel).
+ * Nav, hero (full-height side art), signup band, features, why, early access, footer CTA.
  */
-.nl-navbar {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+.iron-header {
+    background-color: var(--iron-bg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.nl-brand {
-    color: var(--nl-color-brand) !important;
-    letter-spacing: -0.02em;
+.iron-nav {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
-.nl-nav-link {
-    font-weight: 500;
+.iron-nav .iron-nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start !important;
+    width: 100%;
+    gap: 0.5rem 1.5rem;
 }
 
-.nl-nav-link:focus-visible {
-    border-radius: 0.25rem;
-    box-shadow: var(--nl-focus-ring);
+.iron-brand-logo {
+    flex-shrink: 0;
 }
 
-.nl-btn-primary {
-    font-weight: 600;
+.iron-site-logo {
+    display: block;
+    height: auto;
+    max-height: 42px;
+    width: auto;
+    max-width: min(220px, 55vw);
 }
 
-.nl-hero-figure {
+.iron-nav-collapse {
+    flex-grow: 0 !important;
+}
+
+@media (min-width: 992px) {
+    .iron-nav-collapse {
+        margin-left: 0.25rem;
+    }
+}
+
+.iron-nav-list {
+    gap: 0.25rem 1.75rem;
+}
+
+.iron-nav-link {
+    font-family: var(--iron-font);
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    vertical-align: middle;
+    color: rgba(255, 255, 255, 0.98) !important;
+    padding: 0.5rem 0 !important;
+}
+
+.iron-nav-link:hover,
+.iron-nav-link:focus {
+    color: #fff !important;
+}
+
+.iron-nav-link:focus-visible {
+    border-radius: 0.2rem;
+    box-shadow: var(--iron-focus);
+}
+
+.iron-dropdown {
+    background-color: #3a2440 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.iron-dropdown .dropdown-item {
+    font-size: 0.8125rem;
+}
+
+.iron-dropdown .dropdown-item:hover {
+    background: rgba(233, 30, 99, 0.2);
+    color: #fff;
+}
+
+.iron-nav-toggler {
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Hero — full width (same shell as other sections) */
+.iron-hero {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: var(--iron-bg);
+}
+
+.iron-cpp-img-mobile {
+    max-height: min(42vw, 280px);
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.3));
+}
+
+/* Hero + signupPrimary stack — one cpp image spans both sections (desktop) */
+.iron-hero-signup-stack {
     position: relative;
 }
 
-.nl-hero-img {
-    background: linear-gradient(145deg, #eff6ff 0%, #f8fafc 100%);
+/* Sections sit above the figure (z-index 1); transparent right edge reveals the graphic (lg+) */
+.iron-hero-signup-stack > .iron-hero {
+    position: relative;
+    z-index: 2;
 }
 
-.nl-logo-tile {
-    min-height: 4.5rem;
+@media (min-width: 992px) {
+    .iron-hero-signup-stack > .iron-hero {
+        background: linear-gradient(to right, var(--iron-bg) 0%, var(--iron-bg) 40%, transparent 48%);
+    }
+
+    .iron-hero-signup-stack > .iron-band--signup-primary {
+        background: linear-gradient(to right, #8e608e 0%, #402640 36%, #371a34 50%, transparent 52%);
+    }
+}
+
+.iron-hero-signup-stack > .iron-band--signup-primary {
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+@media (max-width: 991.98px) {
+    .iron-hero-signup-stack > .iron-band--signup-primary {
+        background: var(--iron-band-gradient);
+    }
+}
+
+.iron-hero-signup-stack .iron-hero .iron-container,
+.iron-hero-signup-stack .iron-band--signup-primary .iron-container {
+    position: relative;
+    z-index: 3;
+}
+
+@media (min-width: 992px) {
+    .iron-hero-inner--with-cpp-art,
+    .iron-band-inner--with-cpp-art {
+        padding-right: min(50vw, 40rem);
+        max-width: 100%;
+    }
+}
+
+/* Single figure: full height of hero + signup, large art on the right */
+.iron-cpp-absolute {
+    position: absolute;
+    top: 0;
+    right: var(--iron-gutter-x);
+    bottom: 0;
+    width: min(60vw, 52rem);
+    margin: 0;
     display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.iron-cpp-absolute-img {
+    display: block;
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: right center;
+    filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.35));
+}
+
+.iron-hero-logo-wrap {
+    margin-bottom: 0;
+}
+
+.iron-pdf-logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 5.5rem;
+}
+
+.iron-tagline {
+    font-family: var(--iron-font);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.iron-hero-heading {
+    font-family: var(--iron-font);
+    font-weight: 900;
+    font-size: clamp(1.75rem, 5vw, 50px);
+    line-height: 1.08;
+    letter-spacing: 0;
+    margin: 0;
+}
+
+.iron-hero-line1 {
+    color: #ffffff;
+}
+
+.iron-hero-line2 {
+    color: var(--iron-heading-lavender);
+}
+
+.iron-coming-soon {
+    font-family: var(--iron-font);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0;
+    color: var(--iron-coming);
+    text-transform: none;
+}
+
+/* Signup band — left → right gradient */
+.iron-band {
+    background: var(--iron-band-gradient);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.iron-band-heading {
+    font-family: var(--iron-font);
+    font-weight: 900;
+    font-size: clamp(1.75rem, 4vw, 40px);
+    line-height: 1.1;
+    letter-spacing: 0;
+}
+
+.iron-band-sub {
+    font-family: var(--iron-font);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0;
+}
+
+.iron-signup-form {
+    max-width: 44rem;
+}
+
+.iron-signup-form--narrow {
+    max-width: 44rem;
+}
+
+.iron-input-combo {
+    display: flex;
+    align-items: stretch;
+    background: #fff;
+    border-radius: 999px;
+    padding: 0.35rem 0.35rem 0.35rem 1.25rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.iron-email-input {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    font-family: var(--iron-font);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 0;
+    padding: 0.65rem 0.5rem;
+    color: #1a1a1a !important;
+}
+
+.iron-email-input::placeholder {
+    color: #757575;
+}
+
+.iron-email-input:focus {
+    box-shadow: none !important;
+}
+
+.iron-btn-pink {
+    flex-shrink: 0;
+    background: var(--iron-pink) !important;
+    border: none !important;
+    color: #fff !important;
+    font-family: var(--iron-font);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.65rem 1.35rem;
+    border-radius: 999px !important;
+    white-space: nowrap;
+}
+
+.iron-btn-pink:hover {
+    background: var(--iron-pink-hover) !important;
+    color: #fff !important;
+}
+
+.iron-btn-pink:focus-visible {
+    box-shadow: var(--iron-focus);
+}
+
+.iron-btn-chevron::after {
+    content: ">";
+    margin-left: 0.2em;
+    font-weight: 700;
+}
+
+.iron-footnote-row {
+    align-items: center;
+}
+
+.iron-soon-pill {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    min-height: 32px;
+    padding: 2px 18px;
+    border-radius: 126px;
+    background-color: var(--iron-pill-bg);
+    color: #2c0f29;
+    font-family: var(--iron-font);
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+    gap: 10px;
 }
 
-.nl-logo-abbr {
-    font-size: 1.125rem;
+.iron-soon-hash {
+    font-weight: 700;
+    margin-right: 0.15em;
+}
+
+.iron-footnote-line {
+    font-family: var(--iron-font);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0;
+    color: var(--iron-footnote-light);
+    flex: 1 1 12rem;
+}
+
+.iron-footnote-em {
+    font-weight: 500;
+}
+
+/* Features — IronPDF for C++ */
+.iron-features {
+    background: var(--iron-bg);
+}
+
+.iron-features-title-wrap {
+    position: relative;
+}
+
+.iron-features-title {
+    font-family: var(--iron-font);
+    font-weight: 800;
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+}
+
+.iron-coming-soon-img {
+    width: clamp(72px, 18vw, 120px);
+    height: auto;
+    position: absolute;
+    top: -2.8rem;
+    right: -5rem;
+    transform: rotate(12deg);
+    pointer-events: none;
+}
+
+@media (max-width: 576px) {
+    .iron-coming-soon-img {
+        position: static;
+        transform: none;
+        margin-top: 0.5rem;
+    }
+
+    .iron-features-title-wrap {
+        flex-direction: column !important;
+    }
+}
+
+.iron-feat-points {
+    row-gap: 0.75rem;
+}
+
+.iron-feat-divider {
+    color: rgba(255, 255, 255, 0.45);
+    font-weight: 300;
+    user-select: none;
+}
+
+.iron-feat-hash {
+    font-family: var(--iron-font);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0;
+    color: #fff;
+    margin-right: 0.35rem;
+}
+
+.iron-feat-desc {
+    font-family: var(--iron-font);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.iron-feature-body-col {
+    text-align: left;
+}
+
+.iron-feature-body {
+    font-family: var(--iron-font);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.iron-feature-strong {
+    font-family: var(--iron-font);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+/* Why — #402640 */
+.iron-why {
+    background: var(--iron-why-bg);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.iron-why-diagram {
+    max-width: 100%;
+    height: auto;
+}
+
+.iron-why-title {
+    font-family: var(--iron-font);
+    font-weight: 900;
+    font-size: clamp(1.75rem, 3.5vw, 40px);
+    line-height: 1.2;
+    letter-spacing: 0;
+    margin: 0;
+}
+
+.iron-why-line1 {
+    color: #fff;
+}
+
+.iron-why-line2 {
+    color: var(--iron-heading-lavender);
+}
+
+.iron-why-body {
+    font-family: var(--iron-font);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0;
+    color: #ffffff;
+}
+
+/* Early access */
+.iron-early {
+    background: var(--iron-bg);
+}
+
+.iron-early-title {
+    font-family: var(--iron-font);
+    font-weight: 900;
+    font-size: clamp(1.75rem, 3.5vw, 40px);
+    line-height: 1.2;
+    letter-spacing: 0;
+    margin: 0;
+}
+
+.iron-early-line1 {
+    color: #fff;
+}
+
+.iron-early-line2 {
+    color: var(--iron-heading-lavender);
+}
+
+.iron-early-intro {
+    font-family: var(--iron-font);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0;
+    color: rgba(255, 255, 255, 0.92);
+    max-width: 52rem;
+}
+
+.iron-early-card {
+    width: 100%;
+    max-width: min(383px, 100%);
+    min-height: 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    border-radius: 122px;
+    border: 3px solid rgba(255, 255, 255, 0.12);
+    padding: 23px 30px;
+    background: #170617cc;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 992px) {
+    .iron-early .iron-early-card {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.iron-early-card-top {
+    gap: 1rem 1.25rem;
+}
+
+.iron-early-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 127px;
+    min-height: 36px;
+    padding: 4px 24px;
+    border-radius: 126px;
+    font-family: var(--iron-font);
+    font-weight: 700;
+    font-size: 0.7rem;
     letter-spacing: 0.04em;
-    color: var(--nl-color-brand);
+    white-space: nowrap;
 }
 
-.nl-card {
-    border-radius: var(--nl-radius-lg);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.iron-early-pill--released {
+    background: #c6aac6;
+    color: #2c0f29;
 }
 
-.nl-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0.75rem 2rem rgba(15, 23, 42, 0.08) !important;
+.iron-early-pill--soon {
+    background: #331433;
+    color: #fff;
 }
 
-.nl-card:focus-within {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
+.iron-early-svg {
+    flex-shrink: 0;
+    width: 72px;
+    height: auto;
 }
 
-.nl-feature-icon {
-    display: block;
+.iron-early-product {
+    font-family: var(--iron-font);
+    line-height: 1.2;
 }
 
-.nl-cta-panel {
-    background: linear-gradient(120deg, #f1f5f9 0%, #ffffff 55%, #eff6ff 100%);
-    border: 1px solid rgba(148, 163, 184, 0.35);
+.iron-early-iron {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #fff;
+    letter-spacing: 0.06em;
 }
 
-.nl-cta-copy {
-    max-width: 40rem;
+.iron-early-pdf {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #fff;
+    letter-spacing: 0.06em;
 }
 
-.nl-footer-link {
-    text-decoration: none;
+.iron-early-sub {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 0.15rem;
 }
 
-.nl-footer-link:hover {
-    text-decoration: underline;
+/* Footer signup */
+.iron-footer-cta {
+    background: var(--iron-bg);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.nl-footer-link:focus-visible {
-    border-radius: 0.2rem;
-    box-shadow: var(--nl-focus-ring);
+.iron-footer-cta-title {
+    font-family: var(--iron-font);
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 34px;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 0;
+}
+
+.iron-footer-line1 {
+    color: #fff;
+}
+
+.iron-footer-line2 {
+    color: var(--iron-heading-lavender);
+}
+
+.iron-input-combo--footer {
+    max-width: 100%;
+}
+
+.iron-footer-email-input::placeholder {
+    color: #181818 !important;
+    opacity: 1;
+}
+
+.iron-footer-cta-btn {
+    width: 180px;
+    min-height: 50px;
+    flex-shrink: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 27px !important;
+    background: var(--iron-footer-pink) !important;
+    border: none !important;
+    color: #fff !important;
+    font-family: var(--iron-font);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.iron-footer-cta-btn:hover {
+    filter: brightness(1.08);
+    color: #fff !important;
+}
+
+.iron-footer-chevron::after {
+    content: ">";
+    margin-left: 0.25em;
+}
+
+.iron-footer {
+    background: var(--iron-bg-deep);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.iron-footer-copy {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+@media (max-width: 480px) {
+    .iron-input-combo {
+        flex-direction: column;
+        border-radius: 1rem;
+        padding: 0.75rem;
+        gap: 0.75rem;
+    }
+
+    .iron-btn-pink {
+        width: 100%;
+    }
+
+    .iron-footer-cta-btn {
+        width: 100%;
+    }
 }

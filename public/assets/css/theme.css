@@ -1,33 +1,12 @@
 /**
- * Theme overrides for Bootstrap (brand primary, stats band, body layout).
+ * Body layout; Bootstrap tweaks on dark page.
  */
-.nl-body {
+.iron-body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #fff;
 }
 
-.nl-body > main {
-    flex: 1 0 auto;
-}
-
-.nl-stats-section {
-    background: linear-gradient(135deg, var(--nl-color-brand) 0%, #0f172a 100%);
-}
-
-/* Improve contrast on primary buttons vs default Bootstrap blue */
-.btn-primary.nl-btn-primary,
-.nl-stats-section .btn-primary {
-    --bs-btn-bg: var(--nl-color-brand-accent);
-    --bs-btn-border-color: var(--nl-color-brand-accent);
-    --bs-btn-hover-bg: #1d4ed8;
-    --bs-btn-hover-border-color: #1d4ed8;
-    --bs-btn-focus-shadow-rgb: 37, 99, 235;
-    --bs-btn-active-bg: #1d4ed8;
-    --bs-btn-active-border-color: #1d4ed8;
-}
-
-.text-secondary {
-    color: var(--nl-color-muted) !important;
+.iron-body .text-secondary {
+    color: rgba(255, 255, 255, 0.65) !important;
 }

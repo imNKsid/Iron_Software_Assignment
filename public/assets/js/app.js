@@ -1,5 +1,5 @@
 /**
- * Minimal enhancements: smooth scroll for same-page anchors (respects reduced motion).
+ * Smooth scroll for in-page anchors; demo signup forms do not POST (no backend in this task).
  */
 (function () {
     const prefersReduced =
@@ -16,4 +16,18 @@
         e.preventDefault();
         el.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth", block: "start" });
     });
+
+    function bindDemoForms() {
+        document.querySelectorAll("[data-iron-demo-form]").forEach(function (form) {
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+            });
+        });
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", bindDemoForms);
+    } else {
+        bindDemoForms();
+    }
 })();
